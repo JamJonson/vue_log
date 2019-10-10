@@ -1,6 +1,6 @@
-# Obejet.definedproperty
+# Obejet.defineproperty
 
-**Obejet.definedproperty不兼容低版本浏览器，IE8以下**
+**Obejet.defineproperty不兼容低版本浏览器，IE8以下**
 
 ---
 ##### Object.defineProperty基础了解

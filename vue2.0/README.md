@@ -2,4 +2,4 @@
 
 #### VUE2.0原理
 ---
-* [Object.definedproperty](./vue_原理解析/Object.definedproperty/README.md)
+* [Object.defineproperty](./vue_原理解析/Object.defineproperty/README.md)
