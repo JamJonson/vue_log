@@ -10,7 +10,9 @@ function JamJonson (option  = {}) { // option接受数据
 let jamjonson = new JamJonson({
     el: '#app',
     data: {
-        name: 'jamjonson'
+        message: {
+            name: 'JamJonson'
+        }
     }
 })
 
@@ -18,6 +20,7 @@ let jamjonson = new JamJonson({
 function Observe(data){ // 编辑主要逻辑
     for (let key in data) { // 枚举对象data,把data属性通过object.defineproperty方式定义属性
         let val = data[key] // 拿到值
+        observe(val) // 如果对象中包含对象，方法内判断是否是对象
         Object.defineProperty(data, key, {
             enumerable: true, // 可枚举
             configurable: true, // 可操作属性
@@ -30,10 +33,12 @@ function Observe(data){ // 编辑主要逻辑
                   return
               }
               val = newVal // 赋值给val,当下次取值的时候能拿到新值
+              observe(newVal) // 希望赋值新对象也有get和set，例如 a = {a:2}, 如果没有这个方法会发现赋值后新对象没有get和set方法
             }
         })
     }
 }
 function observe(data){
+    if (typeof data !== 'object') return // 不加会循环到底部，溢出报错 例如data: {a:{a: 'test'}, b: 'test2}
     return new Observe(data)
 }
