@@ -4,6 +4,18 @@ function JamJonson (option  = {}) { // option接受数据
     this.$option = option // 将所有的属性挂在在$option上，类似vue的vm.$option
     let data = this._data = this.$option.data
     observe(data)
+    // 数据代理
+    for (let key in data) {
+        Object.defineProperty(this, key, {
+            enumerable: true, // 可枚举
+            get () {
+                return this._data[key] // this.message = {name: 'JamJonson'}
+            },
+            set (newVal) {
+                this._data[key] = newVal
+            }
+        })
+    }
 }
 
 // 模仿vue构建
