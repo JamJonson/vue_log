@@ -4,3 +4,4 @@
 ---
 * [Object.defineproperty](./vue2.0/vue_原理解析/Object.defineproperty/README.md)
 * [Observe](./vue2.0/vue_原理解析/Observe/README.md)
+* [compile 编译模板](./vue2.0/vue_原理解析/compile/README.md)

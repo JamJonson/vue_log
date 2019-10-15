@@ -1,9 +1,4 @@
-# Observe
-## 模仿VUE实现数据劫持数据代理
----
-### 通过Object.defineproperty实现数据劫持
-##### [demo地址](./index.html)
-```
+// 通过Object.defineproperty实现数据劫持
 function JamJonson (option  = {}) { // option接受数据
     // vue里面有vm.$option
     this.$option = option // 将所有的属性挂在在$option上，类似vue的vm.$option
@@ -21,21 +16,49 @@ function JamJonson (option  = {}) { // option接受数据
             }
         })
     }
+    new Compaile(option.el, this)
 }
 
+function Compaile(el, vm) {
+    vm.$el = document.querySelector(el)
+    let fragment = document.createDocumentFragment()
+    while(chlid = vm.$el.firstChild) {
+        fragment.appendChild(chlid)
+    }
+    replace(fragment)
+    function replace(fragment) {
+        Array.from(fragment.childNodes).forEach(function (node) {
+            let text = node.textContent
+            let reg = /\{\{(.*)\}\}/g
+            if (node.nodeType === 3 && reg.test(text)) {
+                // console.log(RegExp.$1)
+                let arr = RegExp.$1.split('.')
+                let val = vm // 配合数据代理理解
+                arr.forEach(function(k) {
+                    val = val[k]
+                    console.log(`val：${RegExp.$1} ==> ${k} ==> ${val}`)
+                })
+                node.textContent = text.replace(reg, val)
+            }
+            if (node.childNodes) {
+                replace(node)
+            }
+        })
+    }
+    vm.$el.appendChild(fragment)
+}
 // 模仿vue构建
 let jamjonson = new JamJonson({
     el: '#app',
     data: {
         message: {
             name: 'JamJonson'
-        }
+        },
+        test: 2
     }
 })
-```
 
-### 观察对象给对象增加object.defindproperty
-```
+// 观察对象给对象增加object.defindproperty
 function Observe(data){ // 编辑主要逻辑
     for (let key in data) { // 枚举对象data,把data属性通过object.defineproperty方式定义属性
         let val = data[key] // 拿到值
@@ -61,4 +84,3 @@ function observe(data){
     if (typeof data !== 'object') return // 不加会循环到底部，溢出报错 例如data: {a:{a: 'test'}, b: 'test2}
     return new Observe(data)
 }
-```

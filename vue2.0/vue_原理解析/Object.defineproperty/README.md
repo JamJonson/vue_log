@@ -6,6 +6,7 @@
 ##### Object.defineProperty基础了解
 
 参考地址：[Object.defineProperty()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+##### [demo地址](./index.html)
 ###### 了解情况1：
 ```
 let obj = {}
