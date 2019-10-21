@@ -27,5 +27,6 @@ let watcher = new Watcher(function(){
 
 
 let dep = new Dep();
+console.log(dep);
 dep.addSub(watcher);
 dep.notify()
