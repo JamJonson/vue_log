@@ -8,3 +8,4 @@
 * [发布订阅](./vue2.0/vue_原理解析/发布订阅/README.md)
 * [连接试图与数据](./vue2.0/vue_原理解析/连接试图与数据/README.md)
 * [双向数据绑定的实现](./vue2.0/vue_原理解析/双向数据绑定的实现/README.md)
+* [实现简单computed](./vue2.0/vue_原理解析/实现computed/README.md)
