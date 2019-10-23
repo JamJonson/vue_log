@@ -7,3 +7,4 @@
 * [compile 编译模板](./vue2.0/vue_原理解析/compile/README.md)
 * [发布订阅](./vue2.0/vue_原理解析/发布订阅/README.md)
 * [连接试图与数据](./vue2.0/vue_原理解析/连接试图与数据/README.md)
+* [双向数据绑定的实现](./vue2.0/vue_原理解析/双向数据绑定的实现/README.md)
