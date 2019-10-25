@@ -1,0 +1,7 @@
+# 主要作用是忽略哪些文件的语法检查
+/build/
+/config/
+/dist/
+/*.js
+/src/modules/commonPage/sdk/
+/src/modules/commonPage/utils/md5.js
