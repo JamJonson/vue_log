@@ -84,3 +84,4 @@ function observe(data){
     if (typeof data !== 'object') return // 不加会循环到底部，溢出报错 例如data: {a:{a: 'test'}, b: 'test2}
     return new Observe(data)
 }
+// test_git more
