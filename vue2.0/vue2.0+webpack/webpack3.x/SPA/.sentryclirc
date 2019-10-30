@@ -1,0 +1,7 @@
+[auth]
+token=08e48ef2b489406bb9d08c96e4ff9d38e085bfa994fd4bb5a26ab8f7553a7ff6
+
+[defaults]
+org=sentry
+url=http://18k925i398.iok.la:57381
+project=blood_sugar_management
