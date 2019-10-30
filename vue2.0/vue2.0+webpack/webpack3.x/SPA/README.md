@@ -1,6 +1,6 @@
 # JamJonson
 
-> y
+> J
 
 ## Build Setup
 
@@ -230,7 +230,7 @@ this.$bus.on('refreshData', () => {
  * descript
  * 组件全局注册
  * @access public
- * @author 燕鹏
+ * @author J
  * @return {string} The blended color.
 */
 // 全局组件注入 start
