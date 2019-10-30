@@ -7,7 +7,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const glob = require('glob')
 
 // 生成相对于根目录的绝对路径
-function resolve(dir) {
+function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -31,7 +31,6 @@ const createLintingRule = () => ({
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
-var entries = getEntry('./src/modules/*/*.js') // 获得入口js文件 mpa 改
 
 // 下面就是webpack基本的配置信息（可以立即成是开发环境和生产环境公共的配置）
 module.exports = {
@@ -49,15 +48,15 @@ module.exports = {
     // 生成文件的名称
     filename: '[name].js',
     // 输出解析文件的目录，url 相对于 HTML 页面(生成的html文件中，css和js等静态文件的url前缀)
-    publicPath: process.env.NODE_ENV === 'production' ?
-      config.build.assetsPublicPath :
-      config.dev.assetsPublicPath
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
   },
   // 配置模块解析时候的一些选项
   resolve: {
     // 指定哪些类型的文件可以引用的时候省略后缀名
     extensions: ['.js', '.vue', '.json'],
-     // 别名，在引入文件的时候可以使用
+    // 别名，在引入文件的时候可以使用
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       // 可以在引入文件的时候使用@符号引入src文件夹中的文件
@@ -72,7 +71,7 @@ module.exports = {
     // rules是一个数组，其中的每一个元素都是一个对象，这个对象是针对具体类型的文件进行的配置。
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
-       // .vue文件的配置
+      // .vue文件的配置
       {
         // 这个属性是一个正则表达式，用于匹配文件。这里匹配的是.vue文件
         test: /\.vue$/,
@@ -142,7 +141,7 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
+      }
     ]
   },
   // 这些选项用于配置polyfill或mock某些node.js全局变量和模块。

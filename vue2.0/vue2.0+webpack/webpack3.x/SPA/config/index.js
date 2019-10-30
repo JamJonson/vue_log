@@ -18,7 +18,8 @@ module.exports = {
     proxyTable: {},
 
     // 开发时候的访问域名。可以通过环境变量自己设置
-    host: '192.168.1.74', // can be overwritten by process.env.HOST
+    // host: '192.168.1.74', // can be overwritten by process.env.HOST
+    host: 'localhost', // can be overwritten by process.env.HOST
     // 开发时候的端口。可以通过环境变量PORT设定。如果端口被占用了，会随机分配一个未被使用的端口
     port: 8081,
     // 是否自动打开浏览器
@@ -74,9 +75,9 @@ module.exports = {
     // Paths
     // 编译生成的文件的目录
     assetsRoot: path.resolve(__dirname, '../dist'),
-     // 编译生成的静态文件的目录
+    // 编译生成的静态文件的目录
     assetsSubDirectory: 'static',
-     // 编译发布的根目录，可配置为资源服务器域名或者cdn域名
+    // 编译发布的根目录，可配置为资源服务器域名或者cdn域名
     assetsPublicPath, // 测试 成产配置
 
     /**

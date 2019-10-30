@@ -27,7 +27,7 @@
     "dateFormat": "ddd MMM Do YYYY",
     "outputSourceFiles": true,
     "outputSourcePath": true,
-    "systemName": "idoctor",
+    "systemName": "vue+webpack",
     "footer": "",
     "copyright": "JamJonson",
     "navType": "vertical",
