@@ -1,0 +1,17 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false, // 启用将ES6模块语法转换为另一种模块类型。将其设置为 false 就不会转换模块。
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"] // 可以利用 browserslist 查询选择的浏览器,请注意，浏览器的结果会被来自 targets 的明确条目覆盖。
+      }
+    }],
+    "stage-2"
+  ],
+   // 安装 babel-plugin-import 插件，babel-plugin-import 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
+  "plugins": ["transform-vue-jsx", "transform-runtime", ["import", {
+    "libraryName": "vant",
+    "libraryDirectory": "es",
+    "style": true // `style: true` 会加载 less 文件
+  }]]
+}
