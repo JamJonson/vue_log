@@ -14,7 +14,7 @@ import hellomixins from '@/mixins/helloworld/index'
 export default {
   data () {
     return {
-      hello: 'helloWorld'
+      hello: 'helloWorld!'
     }
   },
   mixins: [hellomixins]
