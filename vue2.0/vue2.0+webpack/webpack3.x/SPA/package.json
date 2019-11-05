@@ -35,7 +35,7 @@
     "element-ui": "2.8.2",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "lrz": "^4.9.40",
     "mockjs": "^1.0.1-beta3",
     "normalize.css": "^8.0.0",
