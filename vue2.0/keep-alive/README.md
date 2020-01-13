@@ -1,3 +1,4 @@
+## [keep-alive 清除缓存参考地址](https://segmentfault.com/a/1190000015845117?utm_source=tag-newest)
 ```
 keep-alive 清除缓存
 Vue.mixin({
